@@ -18,13 +18,10 @@ public class EmployeeController {
         employeeService.punch(employee);
 
     }
-    @GetMapping("all")
+    @GetMapping("/all")
     public List<Employee> showAll(){
         return employeeService.getAll();
 
     }
-//        public List<Book> getAllDetails(){
-//            return bookService.getAllDetails();
-//    }
 
 }
