@@ -1,8 +1,9 @@
-package model.dto;
-
+package org.example.model.dto;
 import lombok.*;
-
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -16,8 +17,7 @@ public class Employee {
     private int id;
     private String name;
     private LocalDate date;
-    private LocalDate arrivalTime;
-    private LocalDate leaveTime;
-
+    private LocalTime arrivalTime;
+    private LocalTime leaveTime;
 
 }

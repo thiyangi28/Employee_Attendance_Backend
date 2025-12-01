@@ -1,6 +1,6 @@
-package repository;
+package org.example.repository;
 
-import model.entity.EmployeeEntity;
+import org.example.model.entity.EmployeeEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

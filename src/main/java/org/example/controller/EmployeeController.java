@@ -1,12 +1,13 @@
-package controller;
-
-import model.dto.Employee;
+package org.example.controller;
+import org.example.model.dto.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import service.EmployeeService;
+import org.example.service.EmployeeService;
 
-@RestController()
-@RequestMapping("/attendance")
+import java.util.List;
+
+@RestController
+@RequestMapping("attendance")
 public class EmployeeController {
 
     @Autowired
@@ -17,6 +18,10 @@ public class EmployeeController {
         employeeService.punch(employee);
 
     }
+    @GetMapping("/all")
+    public List<Employee> showAll(){
+        return employeeService.getAll();
 
+    }
 
 }
