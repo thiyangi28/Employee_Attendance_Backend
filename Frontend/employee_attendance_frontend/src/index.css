@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;900&display=swap');
+
+:root {
+  --bg: #030712;
+  --card-bg: rgba(17, 24, 39, 0.7);
+  --primary: #3b82f6;
+  --secondary: #10b981;
+  --danger: #ef4444;
+  --text: #f9fafb;
+  --text-muted: #9ca3af;
+  --border: rgba(255, 255, 255, 0.1);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background: var(--bg);
+  background: radial-gradient(circle at 50% 50%, #1e1b4b 0%, #030712 100%);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+#root {
+  width: 100%;
+}
+
+/* Premium App Styles using standard CSS as fallback for broken Tailwind */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.kiosk-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border);
+  border-radius: 2rem;
+  padding: 3rem;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: var(--glass-shadow);
+  animation: slideUp 0.8s ease-out;
+}
+
+.kiosk-title {
+  font-size: 3rem;
+  font-weight: 900;
+  margin-bottom: 2rem;
+  letter-spacing: -0.05em;
+  background: linear-gradient(to right, #fff, #94a3b8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.input-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+}
+
+.kiosk-input {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: 1rem;
+  color: white;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.kiosk-input:focus {
+  outline: none;
+  border-color: var(--primary);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2);
+}
+
+.date-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(59, 130, 246, 0.15);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  padding: 0.75rem 1.25rem;
+  border-radius: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.date-badge strong {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.button-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.punch-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1.25rem;
+  border-radius: 1.25rem;
+  border: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.btn-in {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  box-shadow: 0 10px 20px -5px rgba(16, 185, 129, 0.4);
+}
+
+.btn-in:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 30px -5px rgba(16, 185, 129, 0.6);
+}
+
+.btn-out {
+  background: linear-gradient(135deg, #f43f5e 0%, #e11d48 100%);
+  box-shadow: 0 10px 20px -5px rgba(244, 63, 94, 0.4);
+}
+
+.btn-out:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 30px -5px rgba(244, 63, 94, 0.6);
+}
+
+.punch-btn:active {
+  transform: translateY(0);
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 640px) {
+  .form-grid, .button-grid {
+    grid-template-columns: 1fr;
+  }
+}
