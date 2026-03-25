@@ -1,6 +1,6 @@
 # 🕒 Employee Attendance System (Full-Stack)
 
-A professional employee management and attendance tracking system built with a Spring Boot backend and a **React** frontend.
+A professional employee management and attendance tracking system built with a Spring Boot backend and a React frontend.
 
 ## 🛠️ Tech Stack
 - **Backend:** Java, Spring Boot, Spring Data JPA, Hibernate, MySQL
